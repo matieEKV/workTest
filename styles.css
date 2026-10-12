@@ -110,14 +110,13 @@ html {
 
 /* The actual window holding the catalog */
 .modal-content {
-  position: relative;
+    position: relative;
   width: 95vw;
   height: 95vh;
-  max-width: 1400px;
-  background-color: #000;
-  border-radius: 12px;
+  max-width: none; /* Removes the previous 1400px restriction */
+  background-color: transparent; /* Changed from black to blend better */
+  border-radius: 0; /* Removes rounded corners so it sits flush against the screen edges */
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 /* Ensure iframe expands to fill the modal window */
