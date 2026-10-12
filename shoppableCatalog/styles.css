@@ -1,0 +1,154 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+/* Container to center and structure the content */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+/* Big heading styling */
+.main-heading {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Container to spread the buttons horizontally */
+.button-bar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.card-title {
+    margin-bottom: 1rem;
+    color: rgb(159, 149, 128);
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+/* Base styling for the buttons - ready for your custom CSS */
+.flipbook-btn {
+  flex: 1; /* Makes them all the same width */
+  padding: 1.5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  /* Placeholder styles you can override */
+  background-color: rgb(255,248,231);
+  border: 2px solid #ccc;
+  min-width: 3rem;
+  min-height: 15rem;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.flipbook-btn:hover {
+  background-color: rgb(245, 232, 202);
+  transform: scale(1.3);
+}
+
+.card-media iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  pointer-events: none;
+  margin-top: 0.5rem;
+}
+
+.flipbook-btn:hover .card-media iframe {
+  transform: scale(1.3); /* Zooms into the flipbook content */
+  transform-origin: center center;
+}
+
+/* Container for the iframe */
+.iframe-container {
+  width: 100%;
+  max-width: 1200px;
+  flex-grow: 1;
+  display: flex;
+  border: 2px dashed #aaa; /* Dashed border to show the placeholder area */
+  border-radius: 8px;
+}
+
+/* The actual iframe */
+#flipbook-frame {
+  width: 100%;
+  height: 600px; /* Default height */
+  border: none;
+}
+
+/* Dark semi-transparent background */
+.modal-overlay {
+  position: fixed;
+  inset: 0; /* top: 0; left: 0; right: 0; bottom: 0 */
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Shown state */
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* The actual window holding the catalog */
+.modal-content {
+  position: relative;
+  width: 90vw;
+  height: 85vh;
+  max-width: 1400px;
+  background-color: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Ensure iframe expands to fill the modal window */
+.modal-content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* Close (X) button */
+.modal-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
