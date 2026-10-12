@@ -111,8 +111,8 @@ html {
 /* The actual window holding the catalog */
 .modal-content {
   position: relative;
-  width: 90vw;
-  height: 85vh;
+  width: 95vw;
+  height: 95vh;
   max-width: 1400px;
   background-color: #000;
   border-radius: 12px;
